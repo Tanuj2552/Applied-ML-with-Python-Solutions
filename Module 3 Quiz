@@ -1,0 +1,293 @@
+1.
+Question 1
+A supervised learning model has been built to predict whether someone is infected with a new strain of a virus. The probability of any one person having the virus is 1%.
+Using accuracy as a metric, what would be a good choice for a baseline accuracy score that the new model would want to outperform?
+
+1 point
+Enter answer here 0.99
+
+
+2.
+Question 2
+Given the following confusion matrix:
+
+Predicted Positive	Predicted Negative
+Condition Positive	96	4
+Condition Negative	8	19
+Compute the accuracy to three decimal places.
+
+1 point
+Enter answer here 0.905
+
+
+3.
+Question 3
+Given the following confusion matrix:
+
+Predicted Positive	Predicted Negative
+Condition Positive	96	4
+Condition Negative	8	19
+Compute the precision to three decimal places.
+
+1 point
+Enter answer here: 0.923
+
+
+4.
+Question 4
+Given the following confusion matrix:
+
+Predicted Positive	Predicted Negative
+Condition Positive	96	4
+Condition Negative	8	19
+Compute the recall to three decimal places.
+
+1 point
+Enter answer here 0.96
+
+
+5.
+Question 5
+Using the fitted model `m` create a precision-recall curve to answer the following question:
+
+For the fitted model `m`, approximately what precision can we expect for a recall of 0.8?
+
+(Use y_test and X_test to compute the precision-recall curve. If you wish to view a plot, you can use `plt.show()` )
+
+
+Reset
+1 point
+Enter answer here  : 0.6
+
+Code:
+        print(m)
+        y_scores_m = m.fit(X_train, y_train).decision_function(X_test)
+        precision, recall, thresholds = precision_recall_curve(y_test, y_scores_m)
+        plt.plot(precision, recall)
+        plt.xlabel('precision')
+        plt.ylabel('recall')
+        plt.show()
+
+
+6.
+Question 6
+Given the following models and AUC scores, match each model to its corresponding ROC curve.  b
+
+Model 1 test set AUC score: 0.91
+Model 2 test set AUC score: 0.50
+Model 3 test set AUC score: 0.56
+
+1 point
+
+Model 1: Roc 1
+Model 2: Roc 2
+Model 3: Roc 3
+
+Model 1: Roc 1
+Model 2: Roc 3
+Model 3: Roc 2
+
+Model 1: Roc 2
+Model 2: Roc 3
+Model 3: Roc 1
+
+Model 1: Roc 3
+Model 2: Roc 2
+Model 3: Roc 1
+
+Not enough information is given.
+
+Answer 6 - 'b' 
+                Model 1: Roc 1
+                Model 2: Roc 3
+                Model 3: Roc 2
+                
+
+7.
+Question 7
+Given the following models and accuracy scores, match each model to its corresponding ROC curve.  d
+
+Model 1 test set accuracy: 0.91
+Model 2 test set accuracy: 0.79
+Model 3 test set accuracy: 0.72
+
+1 point
+
+Model 1: Roc 1
+Model 2: Roc 2
+Model 3: Roc 3
+
+Model 1: Roc 1
+Model 2: Roc 3
+Model 3: Roc 2
+
+Model 1: Roc 2
+Model 2: Roc 3
+Model 3: Roc 1
+
+Model 1: Roc 3
+Model 2: Roc 2
+Model 3: Roc 1
+
+Not enough information is given.
+
+Answer 7 - 'd' - Not enough information is given
+
+8.
+Question 8
+Using the fitted model `m` what is the micro precision score?
+
+(Use y_test and X_test to compute the precision score.)
+
+Code
+      print(m)
+      m.fit(X_train,y_train)
+      y_predicted = m.predict(X_test)
+      print(precision_score(y_test,y_predicted, average = 'macro'))
+
+Enter answer here : 0.744
+
+
+9.
+Question 9
+Which of the following is true of the R-Squared metric? (Select all that apply) bc
+
+1 point
+
+The worst possible score is 0.0
+
+
+A model that always predicts the mean of y would get a negative score
+
+
+The best possible score is 1.0
+
+
+A model that always predicts the mean of y would get a score of 0.0
+
+Answer - 9 'bc' 
+                A model that always predicts the mean of y would get a negative score
+
+                The best possible score is 1.0
+
+
+10.
+Question 10
+In a future society, a machine is used to predict a crime before it occurs. If you were responsible for tuning this machine, 
+what evaluation metric would you want to maximize to ensure no innocent people (people not about to commit a crime) are imprisoned (where crime is the positive label)? b
+
+1 point
+
+Accuracy
+
+
+Precision
+
+
+Recall
+
+
+F1
+
+
+AUC
+
+Answer 10 - 'b' - Precision
+
+
+11.
+Question 11
+Consider the machine from the previous question. If you were responsible for tuning this machine,
+what evaluation metric would you want to maximize to ensure all criminals (people about to commit a crime) are imprisoned (where crime is the positive label)? c
+
+1 point
+
+Accuracy
+
+
+Precision
+
+
+Recall
+
+
+F1
+
+
+AUC
+
+Answer 11 - 'c' - Recall
+
+
+12.
+Question 12
+A classifier is trained on an imbalanced multiclass dataset. After looking at the model’s precision scores,
+you find that the micro averaging is much smaller than the macro averaging score. Which of the following is most likely happening? a
+
+1 point
+
+The model is probably misclassifying the frequent labels more than the infrequent labels.
+
+
+The model is probably misclassifying the infrequent labels more than the frequent labels.
+
+Answer 12 - 'a' - The model is probably misclassifying the frequent labels more than the infrequent labels.
+
+13.
+Question 13
+Using the already defined RBF SVC model `m`, run a grid search on the parameters C and gamma, for values [0.01, 0.1, 1, 10].
+The grid search should find the model that best optimizes for recall.
+How much better is the recall of this model than the precision? (Compute recall - precision to 3 decimal places)
+
+(Use y_test and X_test to compute precision and recall.)
+Code 
+          print(m)
+          grid_values = {'gamma':[0.01,0.1,1,10],'C':[0.01,0.1,1,10]}
+          grid_clf_acc = GridSearchCV(m, param_grid = grid_values,scoring = 'recall')
+          grid_clf_acc.fit(X_train, y_train)
+          print(grid_clf_acc.best_params_)
+          print(grid_clf_acc.best_score_)
+
+          clf_new = SVC(C=0.01, cache_size=200, class_weight=None, coef0=0.0,
+            decision_function_shape=None, degree=3, gamma=0.01, kernel='rbf',
+            max_iter=-1, probability=False, random_state=0, shrinking=True,
+            tol=0.001, verbose=False)
+
+          clf_new.fit(X_train, y_train)
+
+          y_predicted = clf_new.predict(X_test)
+
+          print(recall_score(y_test, y_predicted) - precision_score(y_test, y_predicted))
+
+Enter answer here : 0.52
+
+
+14.
+Question 14
+Using the already defined RBF SVC model `m`, run a grid search on the parameters C and gamma, for values [0.01, 0.1, 1, 10]. 
+The grid search should find the model that best optimizes for precision. 
+How much better is the precision of this model than the recall? (Compute precision - recall to 3 decimal places)
+
+(Use y_test and X_test to compute precision and recall.)
+
+Code :
+            print(m)
+            grid_values = {'gamma':[0.01,0.1,1,10],'C':[0.01,0.1,1,10]}
+            grid_clf_acc = GridSearchCV(m, param_grid = grid_values,scoring = 'precision')
+            grid_clf_acc.fit(X_train, y_train)
+            print(grid_clf_acc.best_params_)
+            print(grid_clf_acc.best_score_)
+
+            clf_new = SVC(C=10, cache_size=200, class_weight=None, coef0=0.0,
+              decision_function_shape=None, degree=3, gamma=1, kernel='rbf',
+              max_iter=-1, probability=False, random_state=0, shrinking=True,
+              tol=0.001, verbose=False)
+
+            clf_new.fit(X_train, y_train)
+
+            y_predicted = clf_new.predict(X_test)
+            print(recall_score(y_test, y_predicted))
+            print(precision_score(y_test, y_predicted))
+            print( precision_score(y_test, y_predicted) - recall_score(y_test, y_predicted) )
+
+Answer 14 - 0.15
