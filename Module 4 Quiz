@@ -1,0 +1,238 @@
+1.
+Question 1
+Which of the following is an example of clustering?a
+
+Separate the data into distinct groups by similarity
+
+
+Creating a new representation of the data with fewer features
+
+
+Compress elongated clouds of data into more spherical representations
+
+
+Accumulate data into groups based on labels
+
+Asnwer 1 - 'a' - Separate the data into distinct groups by similarity
+
+
+2.
+Question 2 
+Which of the following are advantages to using decision trees over other models? (Select all that apply) bd
+
+1 point
+
+Decision trees can learn complex statistical models using a variety of kernel functions
+
+
+Trees often require less preprocessing of data
+
+
+Trees are naturally resistant to overfitting
+
+
+Trees are easy to interpret and visualize
+
+Answer 2 - 'bd' - 
+                Trees often require less preprocessing of data
+
+                Trees are easy to interpret and visualize
+
+
+3.
+Question 3d
+What is the main reason that each tree of a random forest only looks at a random subset of the features when building each node?
+
+1 point
+
+To increase interpretability of the model
+
+
+To learn which features are not strong predictors
+
+
+To reduce the computational complexity associated with training each of the trees needed for the random forest.
+
+
+To improve generalization by reducing correlation among the trees and making the model more robust to bias.
+
+Answer 3 - 'd' To improve generalization by reducing correlation among the trees and making the model more robust to bias.
+
+4.
+Question 4 bde
+Which of the following supervised machine learning methods are greatly affected by feature scaling? (Select all that apply)
+
+1 point
+
+Naive Bayes
+
+
+KNN
+
+
+Decision Trees
+
+
+Neural Networks
+
+
+Support Vector Machines
+
+Answer 4 - 'bde' 
+                KNN
+
+                Decision Trees
+
+                Support Vector Machines
+
+5.
+Question 5 bd
+Select which of the following statements are true.
+
+1 point
+
+For having an audience interpret the fitted model, a support vector machine would be a better choice than a decision tree.
+
+
+For a model that won’t overfit a training set, Naive Bayes would be a better choice than a decision tree.
+
+
+For a fitted model that doesn’t take up a lot of memory, KNN would be a better choice than logistic regression.
+
+
+For predicting future sales of a clothing line, Linear regression would be a better choice than a decision tree regressor.
+
+Answer 5 - 'bd' - 
+                  For a model that won’t overfit a training set, Naive Bayes would be a better choice than a decision tree.
+
+                  For predicting future sales of a clothing line, Linear regression would be a better choice than a decision tree regressor.
+
+6.
+Question 6 d
+Match each of the prediction probabilities decision boundaries visualized below with the model that created them.
+
+1 point
+
+KNN (k=1)
+Neural Network
+Decision Tree
+
+KNN (k=1)
+Decision Tree
+Neural Network
+
+Neural Network
+Decision Tree
+KNN (k=1)
+
+Neural Network
+KNN (k=1)
+Decision Tree
+
+Answer 6 - 'd' -
+                Neural Network
+                KNN (k=1)
+                Decision Tree
+                
+
+7.
+Question 7 0.067
+A decision tree of depth 2 is visualized below. Using the `value` attribute of each leaf, 
+find the accuracy score for the tree of depth 2 and the accuracy score for a tree of depth 1.
+What is the improvement in accuracy between the model of depth 1 and the model of depth 2? (i.e. accuracy2 - accuracy1)
+
+Enter answer here : 0.067
+
+
+8.
+Question 8  de
+For the autograded assignment in this module, you will create a classifier to predict whether a given blight ticket will be paid on time (See the module 4 assignment notebook for a more detailed description). Which of the following features should be removed from the training of the model to prevent data leakage? (Select all that apply)
+
+1 point
+
+grafitti_status - Flag for graffiti violations
+
+
+ticket_issued_date - Date and time the ticket was issued
+
+
+agency_name - Agency that issued the ticket
+
+
+compliance_detail - More information on why each ticket was marked compliant or non-compliant
+
+
+collection_status - Flag for payments in collections
+
+Answer 8 - 'de'
+              compliance_detail - More information on why each ticket was marked compliant or non-compliant
+
+              collection_status - Flag for payments in collections
+
+
+9.
+Question 9 acd
+Which of the following might be good ways to help prevent a data leakage situation?
+
+1 point
+
+If time is a factor, remove any data related to the event of interest that doesn’t take place prior to the event.
+
+
+Ensure that data is preprocessed outside of any cross validation folds.
+
+
+Remove variables that a model in production wouldn’t have access to
+
+
+Sanity check the model with an unseen validation set
+
+Answer 9 - 'acd'
+                If time is a factor, remove any data related to the event of interest that doesn’t take place prior to the event.
+
+                Remove variables that a model in production wouldn’t have access to
+
+                Sanity check the model with an unseen validation set
+                
+                
+10.
+Question 10 c
+Given the neural network below, find the correct outputs for the given values of x1 and x2.
+
+The neurons that are shaded have an activation threshold, e.g. the neuron with >1? will be activated and output 1 if the input is greater than 1 and will output 0 otherwise.
+
+
+1 point
+
+x1	x2	output
+0	0	0
+0	1	0
+1	0	0
+1	1	1
+
+x1	x2	output
+0	0	0
+0	1	1
+1	0	1
+1	1	1
+
+x1	x2	output
+0	0	0
+0	1	1
+1	0	1
+1	1	0
+
+x1	x2	output
+0	0	1
+0	1	0
+1	0	0
+1	1	1
+
+
+Answer 10 - 'c'
+
+                x1	x2	output
+                0	0	0
+                0	1	1
+                1	0	1
+                1	1	0
